@@ -20,7 +20,7 @@ import org.junit.Test;
 
 public class ClientTest {
 
-	private Client client
+	private Client client;
 	
 	private static Validator validator;
 
