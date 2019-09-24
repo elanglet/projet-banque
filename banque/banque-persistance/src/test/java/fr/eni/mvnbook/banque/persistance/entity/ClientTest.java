@@ -20,7 +20,7 @@ import org.junit.Test;
 
 public class ClientTest {
 
-	private Client client;
+	private Client client
 	
 	private static Validator validator;
 
@@ -96,7 +96,7 @@ public class ClientTest {
 
 	@Test
 	public void testGetNom() {
-		assertEquals("DUPOND", client.getNom());
+		assertEquals("DUPONT", client.getNom());
 	}
 
 	@Test
