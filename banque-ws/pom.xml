@@ -18,9 +18,9 @@
 
 	<modules>
 		<module>banque-webservice</module>
-    <module>banque-client-webservice</module>
-    <module>banque-ear-webservice</module>
-    <module>banque-command</module>
+	    <module>banque-client-webservice</module>
+	    <module>banque-ear-webservice</module>
+	    <module>banque-command</module>
   </modules>
 
 </project>
