@@ -44,8 +44,13 @@ public class BanqueServiceImpl implements BanqueService {
 	}
 
 	public List<Compte> mesComptes(long idClient) throws BanqueException {
-		Client client = clientDAO.rechercherClientParId(idClient);
-		return compteDAO.rechercherComptesClient(client);
+		try {
+			Client client = clientDAO.rechercherClientParId(idClient);
+			return compteDAO.rechercherComptesClient(client);
+		}
+		catch(Exception e) {
+			throw new BanqueException("Erreur lors de la récupération des comptes du client.");	
+		}
 	}
 
 	public void virement(long numeroDebit, long numeroCredit, double montant) throws BanqueException {
