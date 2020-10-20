@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>    
+
     
 <!DOCTYPE html>
 <html lang="fr">
@@ -15,26 +17,78 @@
 	<title>Bonjour - Vos Comptes ...</title>
 	</head>
 	<body>
-	<h1>Bienvenue sur votre Banque en ligne !</h1>
-	<h3>Bonjour - Vos Comptes ...</h3>
 	
-	<p>Bonjour <c:out value="${leClient.prenom}" />
-	<c:out value="${leClient.nom}" /></p>
+	<fmt:setLocale value = "fr_FR"/>
 	
-	<table border="1">
-		<tr>
-			<th>Numéro</th>
-			<th>Solde</th>
-		</tr>
-		<c:forEach items="${lesComptes}" var="cpt">
-		<tr>
-			<td><c:out value="${cpt.numero}" /></td>
-			<td><c:out value="${cpt.solde}" /></td>
-		</tr>
-		</c:forEach>
-	</table>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">VBEL</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.jsp">Accueil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Nos Services</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Nos Engagements</a>
+				</li>
+				<li class="nav-item dropdown">
+			        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Mes Opérations
+			        </a>
+			        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item active" href="#">Mes Comptes</a>
+				        <a class="dropdown-item" href="virement.do">Virements entre comptes</a>
+				        <div class="dropdown-divider"></div>
+				        <a class="dropdown-item" href="#">Mes contrats</a>
+			        </div>
+			    </li>
+			</ul>
+			<c:if test="${sessionScope.leClient != null}">
+				<span class="navbar-text mr-sm-2"><a href="accueil-client.do">Bonjour <c:out value="${leClient.prenom}" /> <c:out value="${leClient.nom}" /> !</a></span>
+				<a href="deconnexion.do" class="badge badge-info my-2 my-sm-0">Déconnexion</a>
+			</c:if>
+		</div>
+	</nav>
 	
-	<a href="virement.do">Effectuer un virement</a>
+	<header>
+		<div class="alert alert-primary" role="alert">
+			<h2 >Bienvenue sur votre Banque en ligne !!!</h2>
+		</div>
+	</header>
+
+	<div class="container" id="main">
+
+		<div class="alert alert-secondary" role="alert">
+			<h3>Résumé de votre situation</h3>
+		</div>
+	
+		<c:if test="${messageErreur != null}">
+			<div class="alert alert-danger" role="alert">
+				<c:out value="${messageErreur}" />
+			</div>
+		</c:if>
+		
+		<table class="table">
+			<thead class="thead-light">
+				<tr>
+					<th scope="col">Numéro de compte</th>
+					<th scope="col">Solde (en €)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${lesComptes}" var="cpt">
+					<tr>
+						<td><c:out value="${cpt.numero}" /></td>
+						<td><fmt:formatNumber value="${cpt.solde}" type="currency"/></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+
+	</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

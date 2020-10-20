@@ -60,11 +60,13 @@ public class VirementController {
 			
 			List<Compte> listeDeComptes = banqueService.mesComptes(client.getId());
 			model.addAttribute("lesComptes", listeDeComptes);
-			return "comptes";
+			return "redirect: comptes.do";
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
-			return null;
+			model.addAttribute("messageErreur", e.getMessage());
+			
+			return "virement";
 		}
 	}
 }
