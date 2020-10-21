@@ -60,7 +60,7 @@
 			</div>
 		</c:if>
 		
-		<form:form modelAttribute="identificationForm">
+		<form:form modelAttribute="identificationForm" action="identification.do" method="post">
 			<div class="form-group" id="identifiantField">
 				<label for="authIdentifiant">Identifiant : </label>
 				<form:input class="form-control" id="authIdentifiant" aria-describedby="identifiantHelp" placeholder="Votre identifiant" path="identifiant" />

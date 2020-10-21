@@ -82,7 +82,7 @@
 			</div>
 		</c:if>
 	
-		<form:form modelAttribute="contactForm">
+		<form:form modelAttribute="contactForm" action="contact.do" method="post">
 
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Prénom et Nom : </label>
