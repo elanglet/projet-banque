@@ -78,7 +78,7 @@ public class VirementControllerTest extends TestController {
 		verify(banqueService).mesComptes(client.getId());
 		verify(model).addAttribute("lesComptes", listeDesComptes);
 		
-		assertEquals("comptes", result);
+		assertEquals("redirect: comptes.do", result);
 	}
 
 }

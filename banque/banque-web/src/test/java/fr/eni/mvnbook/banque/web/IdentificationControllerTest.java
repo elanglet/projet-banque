@@ -61,16 +61,15 @@ public class IdentificationControllerTest extends TestController {
 	public void testSubmitForm() throws BanqueException {
 		
 		when(banqueService.authentifier(1L, "secret")).thenReturn(client);
-		when(banqueService.mesComptes(1L)).thenReturn(listeDesComptes);
 		
 		String result = identifcationController.submitForm(identificationForm, model);
 		
 		verify(banqueService).authentifier(1L, "secret");
-		verify(banqueService).mesComptes(1L);
+
 		verify(model).addAttribute("leClient", client);
-		verify(model).addAttribute("lesComptes", listeDesComptes);
+
 		
-		assertEquals("comptes", result);	
+		assertEquals("accueil-client", result);	
 	}
 
 }

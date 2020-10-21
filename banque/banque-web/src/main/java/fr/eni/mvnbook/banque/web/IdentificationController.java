@@ -46,9 +46,7 @@ public class IdentificationController {
 				Long.parseLong(form.getIdentifiant()),
 				form.getMotDePasse()
 			);
-			//List<Compte> listeComptes = banqueService.mesComptes(client.getId());
 			model.addAttribute("leClient", client);
-			//model.addAttribute("lesComptes", listeComptes);
 			return "accueil-client";
 		} 
 		catch(Exception e) {
