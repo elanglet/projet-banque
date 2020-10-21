@@ -18,6 +18,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.ModelMap;
 
+import fr.eni.mvnbook.banque.form.VirementForm;
 import fr.eni.mvnbook.banque.metier.BanqueService;
 import fr.eni.mvnbook.banque.persistance.entity.Client;
 import fr.eni.mvnbook.banque.persistance.entity.Compte;

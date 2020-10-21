@@ -31,6 +31,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="#">Nos Engagements</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.do">Nous Contacter</a>
+				</li>
 				<c:choose>
 					<c:when test="${sessionScope.leClient == null}">
 						<li class="nav-item">

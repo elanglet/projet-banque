@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import fr.eni.mvnbook.banque.form.VirementForm;
+
 public class VirementFormTest {
 
 	private VirementForm virementForm;

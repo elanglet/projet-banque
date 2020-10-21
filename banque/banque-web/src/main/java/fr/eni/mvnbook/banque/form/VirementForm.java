@@ -1,4 +1,4 @@
-package fr.eni.mvnbook.banque.web;
+package fr.eni.mvnbook.banque.form;
 
 import java.io.Serializable;
 

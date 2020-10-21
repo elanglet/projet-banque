@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>   
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
     
 <html lang="fr">
   <head>
@@ -30,6 +32,9 @@
 				<li class="nav-item">
 					<a class="nav-link" href="#">Nos Engagements</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.do">Nous Contacter</a>
+				</li>				
 				<li class="nav-item active">
 					<a class="nav-link" href="identification.do">Accès client<span class="sr-only">(current)</span></a>
 				</li>
