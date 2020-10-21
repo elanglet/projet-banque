@@ -85,33 +85,33 @@
 		<form:form modelAttribute="contactForm">
 
 			<div class="form-group row">
-				<label for="nomPrenom" class="col-sm-2 col-form-label">Prénom et Nom : </label>
+				<label class="col-sm-2 col-form-label">Prénom et Nom : </label>
 				<div class="col-sm-10">
-					<form:input path="nomPrenom" class="form-control" id="nomPrenom" placeholder="Robert DUPONT" aria-describedby="nomPrenomHelp" />
+					<form:input path="nomPrenom" class="form-control" id="formField1" placeholder="Robert DUPONT" aria-describedby="nomPrenomHelp" />
 					<small id="nomPrenomHelp" class="form-text text-muted">Vos prénom et nom séparés d'un espace.</small>
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label for="email" class="col-sm-2 col-form-label">Email : </label>
+				<label class="col-sm-2 col-form-label">Email : </label>
 				<div class="col-sm-10">
-					<form:input path="email" class="form-control" id="email" placeholder="moi@domaine.fr" aria-describedby="emailHelp" />
+					<form:input path="email" class="form-control" id="formField1" placeholder="moi@domaine.fr" aria-describedby="emailHelp" />
 					<small id="emailHelp" class="form-text text-muted">Votre adresse mail.</small>
 				</div>
 			</div>
 
 			<div class="form-group row">
-				<label for="objet" class="col-sm-2 col-form-label">Objet : </label>
+				<label class="col-sm-2 col-form-label">Objet : </label>
 				<div class="col-sm-10">
-					<form:input path="objet" class="form-control" id="objet" placeholder="" aria-describedby="objetHelp" />
+					<form:input path="objet" class="form-control" id="formField2" placeholder="" aria-describedby="objetHelp" />
 					<small id="objetHelp" class="form-text text-muted">La raison pour laquelle vous nous contactez.</small>
 				</div>
 			</div>
 			
 			<div class="form-group row">
-				<label for="message" class="col-sm-2 col-form-label">Votre message : </label>
+				<label class="col-sm-2 col-form-label">Votre message : </label>
 				<div class="col-sm-10">
-					<form:textarea path="objet" class="form-control" id="message" placeholder="" rows="10"/>
+					<form:textarea path="objet" class="form-control" id="formField3" placeholder="" rows="10"/>
 				</div>
 			</div>
 			
