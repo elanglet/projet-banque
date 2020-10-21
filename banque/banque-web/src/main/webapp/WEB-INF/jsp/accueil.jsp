@@ -61,19 +61,19 @@
 	
 	<header>
 		<div class="alert alert-primary" role="alert">
-			<h2 >Bienvenue sur votre Banque en ligne !!!</h2>
+			<h2>Bienvenue sur votre Banque en ligne !!!</h2>
 		</div>
 	</header>
 
-	<div class="container">
+	<div class="container" id="main">
 		<div class="row">
-			<div class="col alert alert-info" role="alert">1 of 2</div>
-			<div class="col alert alert-info" role="alert">2 of 2</div>
+			<div class="col alert alert-info" role="alert" id="topLeft">1 of 2</div>
+			<div class="col alert alert-info" role="alert" id="topRight">2 of 2</div>
 		</div>
 		<div class="row">
-			<div class="col alert alert-info" role="alert">1 of 3</div>
-			<div class="col alert alert-info" role="alert">2 of 3</div>
-			<div class="col alert alert-info" role="alert">3 of 3</div>
+			<div class="col alert alert-info" role="alert" id="bottomLeft">1 of 3</div>
+			<div class="col alert alert-info" role="alert" id="bottomMiddle">2 of 3</div>
+			<div class="col alert alert-info" role="alert" id="bottomRight">3 of 3</div>
 		</div>
 	</div>
 

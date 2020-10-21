@@ -56,12 +56,12 @@
 		</c:if>
 		
 		<form:form modelAttribute="identificationForm">
-			<div class="form-group">
+			<div class="form-group" id="identifiantField">
 				<label for="authIdentifiant">Identifiant : </label>
 				<form:input class="form-control" id="authIdentifiant" aria-describedby="identifiantHelp" placeholder="Votre identifiant" path="identifiant" />
 				<small id="identifiantHelp" class="form-text text-muted">Votre identifiant est votre numéro de client.</small>
 			</div>
-			<div class="form-group">
+			<div class="form-group" id="motdepasseField">
 				<label for="authMotdepasse" >Mot de passe : </label>
 				<form:password  class="form-control" id="authMotdepasse" aria-describedby="motdepasseHelp" placeholder="Votre mot de passe" path="motDePasse"  />
 				<small id="motdepasseHelp" class="form-text text-muted">Votre mot de passe ne doit jamais être communiqué à qui que ce soit.</small>

@@ -73,7 +73,7 @@
 		</c:if>
 		
 		<form:form modelAttribute="virementForm">
-		<table class="table table-bordered">
+		<table class="table table-bordered" id="tableVirement">
 			<thead class="thead-light">
 				<tr>
 					<th scope="col">Numéro de compte</th>
@@ -101,7 +101,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		<div class="form-group">
+		<div class="form-group" id="mttVirement">
 			<label for="montant">Montant : </label>
 			<form:input class="form-control" aria-describedby="motdepasseHelp" placeholder="0.00" id="montant" path="montant"/>
 			<small id="montantHelp" class="form-text text-muted">Indiquez le montant de votre virement en euros (€).</small>

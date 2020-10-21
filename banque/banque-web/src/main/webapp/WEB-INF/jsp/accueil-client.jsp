@@ -55,7 +55,7 @@
 		</div>
 	</header>
 
-	<div class="container">
+	<div class="container" id="main">
 		
 		<c:if test="${messageErreur != null}">
 			<div class="alert alert-danger" role="alert">
@@ -64,13 +64,13 @@
 		</c:if>
 	
 		<div class="row">
-			<div class="col alert alert-warning" role="alert">1 of 2</div>
-			<div class="col alert alert-warning" role="alert">2 of 2</div>
+			<div class="col alert alert-warning" role="alert" id="topLeft">1 of 2</div>
+			<div class="col alert alert-warning" role="alert" id="topRight">2 of 2</div>
 		</div>
 		<div class="row">
-			<div class="col alert alert-warning" role="alert">1 of 3</div>
-			<div class="col alert alert-warning" role="alert">2 of 3</div>
-			<div class="col alert alert-warning" role="alert">3 of 3</div>
+			<div class="col alert alert-warning" role="alert" id="bottomLeft">1 of 3</div>
+			<div class="col alert alert-warning" role="alert" id="bottomMiddle">2 of 3</div>
+			<div class="col alert alert-warning" role="alert" id="bottomRight">3 of 3</div>
 		</div>
 	</div>
 
