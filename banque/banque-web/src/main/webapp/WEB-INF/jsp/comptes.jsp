@@ -85,12 +85,11 @@
 				<c:forEach items="${lesComptes}" var="cpt">
 					<tr>
 						<td><c:out value="${cpt.numero}" /></td>
-						<td><fmt:formatNumber value="${cpt.solde}" type="currency"/></td>
+						<td><fmt:formatNumber value="${cpt.solde}" type="currency" currencySymbol="€" /></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-
 	</div>
 
     <!-- Optional JavaScript -->

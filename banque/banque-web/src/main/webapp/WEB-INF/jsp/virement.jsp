@@ -89,7 +89,7 @@
 				<c:forEach items="${lesComptes}" var="cpt">
 					<tr>	
 						<td><c:out value="${cpt.numero}" /></td>
-						<td><fmt:formatNumber value="${cpt.solde}" type="currency"/></td>
+						<td><fmt:formatNumber value="${cpt.solde}" type="currency" currencySymbol="€" /></td>
 						<td>
 							<div class="form-check">
 								<form:radiobutton class="form-check-input position-static" path="debiter" id="debiter_${cpt.numero}" value="${cpt.numero}" />
