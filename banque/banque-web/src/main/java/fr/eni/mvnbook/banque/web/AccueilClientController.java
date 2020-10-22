@@ -25,7 +25,7 @@ public class AccueilClientController {
 	@Inject
 	private BanqueService banqueService;
 	
-	@RequestMapping(value="/accueil-client.do", method=RequestMethod.GET)
+	@RequestMapping(value="/accueil-client.eni", method=RequestMethod.GET)
 	public String afficherAccueilClient(ModelMap model) {
 		try {
 			return "accueil-client";

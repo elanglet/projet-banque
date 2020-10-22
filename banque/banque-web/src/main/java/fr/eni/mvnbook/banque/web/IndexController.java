@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-	@RequestMapping("/accueil.do")
+	@RequestMapping("/accueil.eni")
 	public String accueil() {
 		return "accueil";
 	}

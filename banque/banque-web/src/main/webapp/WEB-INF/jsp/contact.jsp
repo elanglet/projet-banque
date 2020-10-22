@@ -39,7 +39,7 @@
 				<c:choose>
 					<c:when test="${sessionScope.leClient == null}">
 						<li class="nav-item">
-							<a class="nav-link" href="identification.do">Accès client</a>
+							<a class="nav-link" href="identification.eni">Accès client</a>
 						</li>
 					</c:when>
 					<c:otherwise>
@@ -48,8 +48,8 @@
 								Mes Opérations
 					        </a>
 					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="comptes.do">Mes Comptes</a>
-						        <a class="dropdown-item" href="virement.do">Virements entre comptes</a>
+								<a class="dropdown-item" href="comptes.eni">Mes Comptes</a>
+						        <a class="dropdown-item" href="virement.eni">Virements entre comptes</a>
 						        <div class="dropdown-divider"></div>
 						        <a class="dropdown-item" href="#">Mes contrats</a>
 					        </div>
@@ -58,8 +58,8 @@
 				</c:choose>
 			</ul>
 			<c:if test="${sessionScope.leClient != null}">
-				<span class="navbar-text mr-sm-2"><a href="accueil-client.do">Bonjour <c:out value="${leClient.prenom}" /> <c:out value="${leClient.nom}" /> !</a></span>
-				<a href="deconnexion.do" class="badge badge-info my-2 my-sm-0">Déconnexion</a>
+				<span class="navbar-text mr-sm-2"><a href="accueil-client.eni">Bonjour <c:out value="${leClient.prenom}" /> <c:out value="${leClient.nom}" /> !</a></span>
+				<a href="deconnexion.eni" class="badge badge-info my-2 my-sm-0">Déconnexion</a>
 			</c:if>
 		</div>
 	</nav>
@@ -82,7 +82,7 @@
 			</div>
 		</c:if>
 	
-		<form:form modelAttribute="contactForm" action="contact.do" method="post">
+		<form:form modelAttribute="contactForm" action="contact.eni" method="post">
 
 			<div class="form-group row">
 				<label class="col-sm-2 col-form-label">Prénom et Nom : </label>

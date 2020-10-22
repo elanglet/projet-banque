@@ -33,10 +33,10 @@
 					<a class="nav-link" href="#">Nos Engagements</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="contact.do">Nous Contacter</a>
+					<a class="nav-link" href="contact.eni">Nous Contacter</a>
 				</li>				
 				<li class="nav-item active">
-					<a class="nav-link" href="identification.do">Accès client<span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="identification.eni">Accès client<span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 		</div>
@@ -60,7 +60,7 @@
 			</div>
 		</c:if>
 		
-		<form:form modelAttribute="identificationForm" action="identification.do" method="post">
+		<form:form modelAttribute="identificationForm" action="identification.eni" method="post">
 			<div class="form-group" id="identifiantField">
 				<label for="authIdentifiant">Identifiant : </label>
 				<form:input class="form-control" id="authIdentifiant" aria-describedby="identifiantHelp" placeholder="Votre identifiant" path="identifiant" />

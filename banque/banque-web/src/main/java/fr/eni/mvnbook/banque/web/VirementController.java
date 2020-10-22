@@ -24,7 +24,7 @@ public class VirementController {
 	@Inject
 	private BanqueService banqueService;
 
-	@RequestMapping(value="/virement.do", method=RequestMethod.GET)
+	@RequestMapping(value="/virement.eni", method=RequestMethod.GET)
 	public String showForm(@ModelAttribute("leClient") Client client, ModelMap model) {
 		try {
 			List<Compte> listeComptes = banqueService.mesComptes(client.getId());
@@ -45,7 +45,7 @@ public class VirementController {
 	}
 	
 	@RequestMapping(
-			value="/virement.do", method=RequestMethod.POST
+			value="/virement.eni", method=RequestMethod.POST
 	)
 	public String submitForm(
 		@ModelAttribute("virementForm") VirementForm virementForm, 
@@ -61,7 +61,7 @@ public class VirementController {
 			
 			List<Compte> listeDeComptes = banqueService.mesComptes(client.getId());
 			model.addAttribute("lesComptes", listeDeComptes);
-			return "redirect: comptes.do";
+			return "redirect: comptes.eni";
 		} 
 		catch (Exception e) {
 			e.printStackTrace();

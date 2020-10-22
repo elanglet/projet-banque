@@ -14,7 +14,7 @@ import fr.eni.mvnbook.banque.persistance.entity.Client;
 @Controller
 public class ContactController {
 
-	@RequestMapping(value="/contact.do", method=RequestMethod.GET)
+	@RequestMapping(value="/contact.eni", method=RequestMethod.GET)
 	public String showForm(ModelMap model) {
 		try {
 			return "contact";
@@ -31,13 +31,13 @@ public class ContactController {
 	}
 	
 	@RequestMapping(
-			value="/contact.do", method=RequestMethod.POST
+			value="/contact.eni", method=RequestMethod.POST
 	)
 	public String submitForm(
 		@ModelAttribute("contactForm") ContactForm contactForm, ModelMap model
 	) {
 		try {
-			return "redirect: accueil.do";
+			return "redirect: accueil.eni";
 		} 
 		catch (Exception e) {
 			e.printStackTrace();

@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class DeconnexionController {
 
-	@RequestMapping(value="/deconnexion.do", method=RequestMethod.GET)
+	@RequestMapping(value="/deconnexion.eni", method=RequestMethod.GET)
 	public String deconnexion(HttpSession session) {
 		session.removeAttribute("leClient");
 		session.invalidate();
 			
-		return "redirect: accueil.do";
+		return "redirect: accueil.eni";
 		
 	}
 }

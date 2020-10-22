@@ -23,7 +23,7 @@ public class ComptesController {
 	@Inject
 	private BanqueService banqueService;
 
-	@RequestMapping(value="/comptes.do", method=RequestMethod.GET)
+	@RequestMapping(value="/comptes.eni", method=RequestMethod.GET)
 	public String afficherComptes(@ModelAttribute("leClient") Client client, ModelMap model) {
 		try {
 			List<Compte> listeComptes = banqueService.mesComptes(client.getId());

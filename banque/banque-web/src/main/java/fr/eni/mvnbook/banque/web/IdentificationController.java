@@ -25,7 +25,7 @@ public class IdentificationController {
 	@Inject
 	private BanqueService banqueService;
 	
-	@RequestMapping(value="/identification.do", method=RequestMethod.GET)
+	@RequestMapping(value="/identification.eni", method=RequestMethod.GET)
 	public String showForm() {
 		return "identification";
 	}
@@ -36,7 +36,7 @@ public class IdentificationController {
 		return form;
 	}
 	
-	@RequestMapping(value="/identification.do", method=RequestMethod.POST)
+	@RequestMapping(value="/identification.eni", method=RequestMethod.POST)
 	public String submitForm(
 		@ModelAttribute("identificationForm") IdentificationForm form,
 		ModelMap model
