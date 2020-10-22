@@ -75,7 +75,7 @@
 			</div>
 		</c:if>
 		
-		<form:form modelAttribute="virementForm">
+		<form:form modelAttribute="virementForm" action="virement.do" method="post">
 		<table class="table table-bordered" id="tableVirement">
 			<thead class="thead-light">
 				<tr>
