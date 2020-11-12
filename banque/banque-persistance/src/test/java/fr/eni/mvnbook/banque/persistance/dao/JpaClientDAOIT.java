@@ -48,8 +48,8 @@ public class JpaClientDAOIT {
 
 		assertThat(client).isNotNull();
 
-		assertThat(client.getId()).isEqualTo(2);
-		assertThat(client.getPrenom()).isEqualTo("Bruno");
+		assertThat(client.getId()).isEqualTo(2); // Modif. pour erreur
+		assertThat(client.getPrenom()).isEqualTo("Robert");
 		assertThat(client.getNom()).isEqualTo("DRUAND");
 		assertThat(client.getAdresse()).isEqualTo("Place de Bretagne");
 		assertThat(client.getCodePostal()).isEqualTo("35000");
@@ -60,7 +60,7 @@ public class JpaClientDAOIT {
 	@Test
 	public void testRechercherTousLesClients() throws BanqueException {
 		List<Client> listeClients = clientDAO.rechercherTousLesClients();
-		assertThat(listeClients).isNotNull().hasSize(4);
+		assertThat(listeClients).isNotNull().hasSize(5); // Modif. pour erreur
 	}
 
 	@Test
