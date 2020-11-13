@@ -5,16 +5,16 @@ WORKDIR /usr/build
 
 RUN apt update && apt -qq -y install curl
 
-RUN curl -O http://apache.crihan.fr/dist/tomcat/tomcat-9/v9.0.38/bin/apache-tomcat-9.0.38.tar.gz
+RUN curl -O http://apache.crihan.fr/dist/tomcat/tomcat-9/v9.0.39/bin/apache-tomcat-9.0.39.tar.gz
 RUN curl -O https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
 
-RUN tar xvzf apache-tomcat-9.0.38.tar.gz
+RUN tar xvzf apache-tomcat-9.0.39.tar.gz
 RUN tar xvzf openjdk-11.0.2_linux-x64_bin.tar.gz
 
-RUN mv apache-tomcat-9.0.38 /usr/local
+RUN mv apache-tomcat-9.0.39 /usr/local
 RUN mv jdk-11.0.2 /usr/local
 
-RUN ln -s /usr/local/apache-tomcat-9.0.38 /usr/local/tomcat
+RUN ln -s /usr/local/apache-tomcat-9.0.39 /usr/local/tomcat
 RUN ln -s /usr/local/jdk-11.0.2           /usr/local/jdk
 
 ENV CATALINA_HOME /usr/local/tomcat
