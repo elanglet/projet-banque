@@ -67,30 +67,16 @@
 		<cobertura.plugin.version>2.7</cobertura.plugin.version>
 		<jacoco.plugin.version>0.8.3</jacoco.plugin.version>
 
-		<!-- URL Serveurs -->
-		<!-- <url.dist.releases> -->
-		<!-- dav:http://mvnbook.elanglet.local/repo/releases -->
-		<!-- </url.dist.releases> -->
-		<!-- <url.dist.snapshots> -->
-		<!-- dav:http://mvnbook.elanglet.local/repo/snapshots -->
-		<!-- </url.dist.snapshots> -->
 		<url.dist.releases>
-			http://nexus.elanglet.local/repository/maven-releases/
+			http://localhost:8081/repository/maven-releases/
 		</url.dist.releases>
 		<url.dist.snapshots>
-			http://nexus.elanglet.local/repository/maven-snapshots/
+			http://localhost:8081/repository/maven-snapshots/
 		</url.dist.snapshots>
-		<url.dist.sites>
-			dav://mvnbook.elanglet.local/sites/
-		</url.dist.sites>
 	</properties>
 
-<!-- 	<scm>
-		<connection>scm:git:http://gitlab.icjava.local/mvnbook/banque-parent.git</connection>
-		<developerConnection>scm:git:ssh://gitlab.icjava.local/mvnbook/banque-parent.git</developerConnection>
-	</scm> -->
 
-<!-- 	<distributionManagement>
+	<distributionManagement>
 		<repository>
 			<id>nexus</id>
 			<name>Référentiel Releases</name>
@@ -101,34 +87,7 @@
 			<name>Référentiel Snapshots</name>
 			<url>${url.dist.snapshots}</url>
 		</snapshotRepository>
-		<site>
-			<id>mvnbook.elanglet.local</id>
-			<url>${url.dist.sites}</url>
-		</site>
-	</distributionManagement> -->
-
-<!-- 	<repositories> -->
-<!-- 		<repository> -->
-<!-- 			<id>mvnbook-releases</id> -->
-<!-- 			<url>${url.repo.releases}</url> -->
-<!-- 			<releases> -->
-<!-- 				<enabled>true</enabled> -->
-<!-- 			</releases> -->
-<!-- 			<snapshots> -->
-<!-- 				<enabled>false</enabled> -->
-<!-- 			</snapshots> -->
-<!-- 		</repository> -->
-<!-- 		<repository> -->
-<!-- 			<id>mvnbook-snapshots</id> -->
-<!-- 			<url>${url.repo.snapshots}</url> -->
-<!-- 			<releases> -->
-<!-- 				<enabled>false</enabled> -->
-<!-- 			</releases> -->
-<!-- 			<snapshots> -->
-<!-- 				<enabled>true</enabled> -->
-<!-- 			</snapshots> -->
-<!-- 		</repository> -->
-<!-- 	</repositories> -->
+	</distributionManagement>
 
 	<dependencies>
 
