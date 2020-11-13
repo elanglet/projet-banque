@@ -17,6 +17,8 @@ RUN mv jdk-11.0.2 /usr/local
 RUN ln -s /usr/local/apache-tomcat-9.0.39 /usr/local/tomcat
 RUN ln -s /usr/local/jdk-11.0.2           /usr/local/jdk
 
+COPY http://localhost:8081/repository/maven-releases/fr/eni/mvnbook/banque-web/1.0.0-RELEASE/banque-web-1.0.0-RELEASE.war /usr/local/tomcat/webapps/
+
 ENV CATALINA_HOME /usr/local/tomcat
 ENV JAVA_HOME /usr/local/jdk
 ENV PATH $CATALINA_HOME/bin:$JAVA_HOME/bin:$PATH
