@@ -20,8 +20,7 @@ RUN mv jdk-11.0.2 /usr/local
 RUN ln -s /usr/local/apache-tomcat-9.0.39 /usr/local/tomcat
 RUN ln -s /usr/local/jdk-11.0.2           /usr/local/jdk
 
-# Téléchargement et déploiement de l'application depuis le serveur Nexus
-COPY ../banque/banque-web/target/banque-web.war /usr/local/tomcat/webapps/
+COPY banque-web.war /usr/local/tomcat/webapps/
 
 # Définition des variables d'environnement pour Tomcat
 ENV CATALINA_HOME /usr/local/tomcat
