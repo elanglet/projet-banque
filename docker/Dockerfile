@@ -7,17 +7,17 @@ WORKDIR /usr/build
 RUN apt update && apt -qq -y install curl
 
 # Téléchargement de Tomcat et du JDK
-RUN curl -O http://apache.crihan.fr/dist/tomcat/tomcat-9/v9.0.39/bin/apache-tomcat-9.0.39.tar.gz
+RUN curl -O http://apache.crihan.fr/dist/tomcat/tomcat-9/v9.0.52/bin/apache-tomcat-9.0.52.tar.gz
 RUN curl -O https://download.java.net/java/GA/jdk11/9/GPL/openjdk-11.0.2_linux-x64_bin.tar.gz
 
 # Installation de Tomcat et du JDK
-RUN tar xzf apache-tomcat-9.0.39.tar.gz
+RUN tar xzf apache-tomcat-9.0.52.tar.gz
 RUN tar xzf openjdk-11.0.2_linux-x64_bin.tar.gz
 
-RUN mv apache-tomcat-9.0.39 /usr/local
+RUN mv apache-tomcat-9.0.52 /usr/local
 RUN mv jdk-11.0.2 /usr/local
 
-RUN ln -s /usr/local/apache-tomcat-9.0.39 /usr/local/tomcat
+RUN ln -s /usr/local/apache-tomcat-9.0.52 /usr/local/tomcat
 RUN ln -s /usr/local/jdk-11.0.2           /usr/local/jdk
 
 COPY banque-web.war /usr/local/tomcat/webapps/
