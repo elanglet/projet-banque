@@ -21,7 +21,7 @@ RUN ln -s /usr/local/apache-tomcat-9.0.39 /usr/local/tomcat
 RUN ln -s /usr/local/jdk-11.0.2           /usr/local/jdk
 
 # Téléchargement et déploiement de l'application depuis le serveur Nexus
-ADD http://jenkins:jenkinspwd@nexus-srv:8081/repository/maven-releases/fr/eni/mvnbook/banque-web/1.0.0-RELEASE/banque-web-1.0.0-RELEASE.war /usr/local/tomcat/webapps/
+COPY ../banque/banque-web/target/banque-web.war /usr/local/tomcat/webapps/
 
 # Définition des variables d'environnement pour Tomcat
 ENV CATALINA_HOME /usr/local/tomcat
