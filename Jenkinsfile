@@ -1,6 +1,9 @@
 pipeline {
-  agent any
-  stages {
+    agent any
+    tools {
+		jdk 'JDK11' 
+	}
+    stages {
     stage('Code') {
       steps {
         git(url: 'https://github.com/elanglet/projet-banque', branch: 'jenkins')
