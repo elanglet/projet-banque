@@ -38,7 +38,7 @@ pipeline {
         }
         stage('Récupération des tests Web') {
        		steps {
-       			catchError(buildResult: 'SUCCESS', stageResult: 'SUCESS') {
+       			if(!fileExists('Selenium')) {
                     bat('md Selenium') 
                 }    
 				dir('Selenium') {
