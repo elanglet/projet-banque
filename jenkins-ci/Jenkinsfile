@@ -12,7 +12,7 @@ pipeline {
         stage('Construction du projet') {
             steps {
                 dir('banque/') {
-                    bat('mvn test package')
+                    bat('mvn package')
                 }
             }
         }
