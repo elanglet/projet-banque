@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Récupération des sources de l\'application') {
             steps {
-                git 'https://github.com/elanglet/projet-banque.git'
+                git url:'https://github.com/elanglet/projet-banque.git', branch: 'jenkins'
             }
         }
         stage('Construction du projet') {
@@ -23,13 +23,16 @@ pipeline {
         }
         stage('Copie du livrable dans le répertoire "docker"') {
         	steps {
-        		// bat('dir')
-	            bat('copy banque\\banque-web\\target\\banque-web.war banque\\docker\\')
+        		dir('banque') {
+	            	bat('copy banque-web\\target\\banque-web.war docker\\')        		    
+        		}
 	        }
         }
         stage('Création de l\'image Docker') {
            steps {
-               bat('docker build -t app-tomcat-web:1.0 docker/')
+           		dir('banque') {
+               		bat('docker build -t app-tomcat-web:1.0 docker/')
+               	}
            }
         }
     }
