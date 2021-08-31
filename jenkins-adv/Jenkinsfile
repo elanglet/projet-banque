@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Copie du livrable dans le répertoire "docker"') {
         	steps {
-	            bat('copy banque\banque-web\target\banque-web.war docker')
+	            bat('copy banque\\banque-web\\target\\banque-web.war docker\\')
 	        }
         }
     }
