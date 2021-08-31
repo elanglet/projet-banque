@@ -38,9 +38,9 @@ pipeline {
         }
         stage('Récupération des tests Web') {
        		steps {
-       			if(!fileExists('Selenium')) {
-                    bat('md Selenium') 
-                }    
+       			//if(!fileExists('Selenium')) {
+                //   bat('md Selenium') 
+                //}    
 				dir('Selenium') {
 				    git url:'https://github.com/elanglet/projet-banque-selenium.git', branch: 'jenkins'
 				}
