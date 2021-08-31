@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    tools {
+		jdk 'JDK11' 
+	}
+    stages {
+        stage('Récupération des sources de l\'application') {
+            steps {
+                git 'https://github.com/elanglet/projet-banque.git'
+            }
+        }
+        stage('Construction du projet') {
+            steps {
+                dir('banque/') {
+                    bat('mvn test package')
+                }
+            }
+        }
+        stage('Consolidation des tests') {
+            steps {
+                junit('**/target/surefire-reports/*.xml')
+            }
+        }
+        stage('Copie du livrable dans le répertoire "docker"') {
+        	steps {
+	            bat('copy banque\banque-web\target\banque-web.war docker')
+	        }
+        }
+    }
+}
