@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Récupération des sources') {
             steps {
-                git 'https://github.com/elanglet/projet-banque.git'
+                git url: 'https://github.com/elanglet/projet-banque.git', branch: 'jenkins'
             }
         }
         stage('Construction du projet') {

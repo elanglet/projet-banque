@@ -23,16 +23,12 @@ pipeline {
         }
         stage('Copie du livrable dans le répertoire "docker"') {
         	steps {
-        		dir('banque') {
-	            	bat('copy banque-web\\target\\banque-web.war docker\\')        		    
-        		}
+	           	bat('copy banque\\banque-web\\target\\banque-web.war docker\\')        		 
 	        }
         }
         stage('Création de l\'image Docker') {
            steps {
-           		dir('banque') {
-               		bat('docker build -t app-tomcat-web:1.0 docker/')
-               	}
+           		bat('docker build -t app-tomcat-web:1.0 docker/')
            }
         }
     }
