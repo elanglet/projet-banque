@@ -33,7 +33,7 @@ pipeline {
         }
         stage('Création et démarrage d\'un conteneur') {
             steps {
-                bat('docker run -d --rm -p9000:8080 --name app-srv-test app-tomcat-web:10')
+                bat('docker run -d --rm -p9000:8080 --name app-srv-test app-tomcat-web:1.0')
             }
             
         }
