@@ -38,11 +38,25 @@ pipeline {
         }
         stage('Récupération des tests Web') {
        		steps {
-                bat('md Selenium')                  
+       			catchError(buildResult: 'SUCCESS', stageResult: 'SUCESS') {
+                    bat('md Selenium') 
+                }    
 				dir('Selenium') {
 				    git url:'https://github.com/elanglet/projet-banque-selenium.git', branch: 'jenkins'
 				}
        		}                                 
        	}
+       	stage('Exécution des tests Web') {
+            steps {
+	            dir('Selenium') {
+	                bat('mvn test package')
+	            }
+            }
+        }
+        stage('Arrêt du conteneur') {
+            steps {
+                bat('docker stop app-srv-test')
+            }
+        }
     }
 }
