@@ -21,8 +21,8 @@ pipeline {
         }
         stage('Copie du livrable dans le répertoire "docker"') {
         	steps {
-        		bat('dir')
-	            // bat('copy banque\\banque-web\\target\\banque-web.war docker\\')
+        		// bat('dir')
+	            bat('copy banque\\banque-web\\target\\banque-web.war docker\\')
 	        }
         }
         stage('Création de l\'image Docker') {
