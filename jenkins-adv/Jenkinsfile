@@ -11,9 +11,7 @@ pipeline {
         }
         stage('Construction du projet') {
             steps {
-                dir('banque/') {
-                    bat('mvn test package')
-                }
+                bat('mvn -f banque/pom.xml test package')
             }
         }
         stage('Consolidation des tests') {
@@ -25,6 +23,11 @@ pipeline {
         	steps {
 	            bat('copy banque\\banque-web\\target\\banque-web.war docker\\')
 	        }
+        }
+        stage('Création de l\'image Docker') {
+           steps {
+               bat('docker build -t app-tomcat-web:1.0 docker/')
+           }
         }
     }
 }
