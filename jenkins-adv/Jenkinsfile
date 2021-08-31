@@ -49,7 +49,7 @@ pipeline {
        	stage('Exécution des tests Web') {
             steps {
 	            dir('Selenium') {
-	                bat('mvn test package')
+	                bat('mvn -Dwebdriver.chrome.driver=drivers/win/chromedriver.exe test ')
 	            }
             }
         }
