@@ -11,7 +11,9 @@ pipeline {
         }
         stage('Construction du projet') {
             steps {
-                bat('mvn -f banque/pom.xml test package')
+	            dir('banque') {
+	                bat('mvn -f banque/pom.xml test package')
+	            }
             }
         }
         stage('Consolidation des tests') {
@@ -22,7 +24,7 @@ pipeline {
         stage('Copie du livrable dans le répertoire "docker"') {
         	steps {
         		// bat('dir')
-	            bat('copy banque\\banque-web\\target\\banque-web.war docker\\')
+	            bat('copy banque\\banque-web\\target\\banque-web.war banque\\docker\\')
 	        }
         }
         stage('Création de l\'image Docker') {
