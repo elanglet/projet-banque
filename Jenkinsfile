@@ -1,12 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Tooling') {
-      steps {
-        tool(name: 'JDK11', type: 'jdk')
-      }
-    }
-
     stage('Code') {
       steps {
         git(url: 'https://github.com/elanglet/projet-banque', branch: 'jenkins')
@@ -15,6 +9,7 @@ pipeline {
 
     stage('Maven') {
       steps {
+        tool(name: 'JDK11', type: 'jdk')
         bat(script: 'mvn -f banque/pom.xml test package', returnStdout: true)
       }
     }
