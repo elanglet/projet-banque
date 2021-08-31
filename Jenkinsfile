@@ -15,7 +15,7 @@ pipeline {
 
     stage('Maven') {
       steps {
-        bat(script: 'mvn banque/pom.xml test package', returnStdout: true)
+        bat(script: 'mvn -f banque/pom.xml test package', returnStdout: true)
       }
     }
 
