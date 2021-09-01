@@ -26,23 +26,27 @@ pipeline {
            		bat('docker build -t app-tomcat-web:1.0 docker/')
            }
         }
-        stage('Création et démarrage d\'un conteneur') {
-            steps {
-            	catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS', message: 'Le conteneur ne semble pas démarré') {
-            		bat('docker stop app-srv-test')    
-            	}            	
-                bat('docker run -d --rm -p9000:8080 --name app-srv-test app-tomcat-web:1.0')
-            }
-        }
-        stage('Récupération des tests Web') {
-       		steps {
-       			//if(!fileExists('Selenium')) {
-                //   bat('md Selenium') 
-                //}    
-				dir('Selenium') {
-				    git url:'https://github.com/elanglet/projet-banque-selenium.git', branch: 'jenkins'
-				}
-       		}                                 
+        stage('Préparation des tests Web') {                   
+            parallel {
+		        stage('Création et démarrage d\'un conteneur') {
+		            steps {
+		            	catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS', message: 'Le conteneur ne semble pas démarré') {
+		            		bat('docker stop app-srv-test')    
+		            	}            	
+		                bat('docker run -d --rm -p9000:8080 --name app-srv-test app-tomcat-web:1.0')
+		            }
+		        }
+		        stage('Récupération des tests Web') {
+		       		steps {
+		       			//if(!fileExists('Selenium')) {
+		                //   bat('md Selenium') 
+		                //}    
+						dir('Selenium') {
+						    git url:'https://github.com/elanglet/projet-banque-selenium.git', branch: 'jenkins'
+						}
+		       		}                                 
+		       	}
+	       	}
        	}
        	stage('Exécution des tests Web') {
             steps {
@@ -51,15 +55,19 @@ pipeline {
 	            }
             }
         }
-        stage('Consolidation des tests') {
-            steps {
-                junit('**/target/surefire-reports/*.xml')
-            }
-        }
-        stage('Arrêt du conteneur') {
-            steps {
-                bat('docker stop app-srv-test')
-            }
-        }
+        stage('Finalisation des tests') {
+			parallel {
+				stage('Consolidation des tests') {
+					steps {
+						junit('**/target/surefire-reports/*.xml')
+				    }
+				}
+				stage('Arrêt du conteneur') {
+					steps {
+						bat('docker stop app-srv-test')
+				    }
+				}                        
+			}
+		}
     }
 }
