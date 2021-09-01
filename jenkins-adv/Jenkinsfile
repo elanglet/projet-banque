@@ -16,11 +16,6 @@ pipeline {
 	            }
             }
         }
-        stage('Consolidation des tests') {
-            steps {
-                junit('**/target/surefire-reports/*.xml')
-            }
-        }
         stage('Copie du livrable dans le répertoire "docker"') {
         	steps {
 	           	bat('copy banque\\banque-web\\target\\banque-web.war docker\\')        		 
@@ -54,6 +49,11 @@ pipeline {
 	            dir('Selenium') {
 	                bat('mvn -Dwebdriver.chrome.driver=drivers/win/chromedriver.exe -Dwebdriver.gecko.driver=drivers/win/geckodriver.exe test ')
 	            }
+            }
+        }
+        stage('Consolidation des tests') {
+            steps {
+                junit('**/target/surefire-reports/*.xml')
             }
         }
         stage('Arrêt du conteneur') {
