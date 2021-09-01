@@ -23,21 +23,21 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="index.jsp">Accueil<span class="sr-only">(current)</span></a>
+					<a id="link-accueil" class="nav-link" href="index.jsp">Accueil<span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Nos Services</a>
+					<a id="link-services" class="nav-link" href="#">Nos Services</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Nos Engagements</a>
+					<a id="link-engagements" class="nav-link" href="#">Nos Engagements</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="contact.eni">Nous Contacter</a>
+					<a id="link-contact" class="nav-link" href="contact.eni">Nous Contacter</a>
 				</li>
 				<c:choose>
 					<c:when test="${sessionScope.leClient == null}">
 						<li class="nav-item">
-							<a class="nav-link" href="identification.eni">Accès client</a>
+							<a id="link-client" class="nav-link" href="identification.eni">Accès client</a>
 						</li>
 					</c:when>
 					<c:otherwise>
