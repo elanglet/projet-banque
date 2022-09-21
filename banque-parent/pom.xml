@@ -73,10 +73,10 @@
 		<!-- dav:http://mvnbook.elanglet.local/repo/snapshots -->
 		<!-- </url.dist.snapshots> -->
 		<url.dist.releases>
-			http://nexus.elanglet.local/repository/maven-releases/
+			http://localhost:8180/repository/maven-releases/
 		</url.dist.releases>
 		<url.dist.snapshots>
-			http://nexus.elanglet.local/repository/maven-snapshots/
+			http://localhost:8180/repository/maven-snapshots/
 		</url.dist.snapshots>
 		<url.dist.sites>
 			dav://mvnbook.elanglet.local/sites/
