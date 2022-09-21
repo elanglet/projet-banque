@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+
+    tools {
+        // Déclaration des outils nécessaires au job.
+        maven "Maven3"
+        jdk "JDK11"
+    }
+
+    stages {
+        stage('Récupérer le code') {
+            steps {
+                // Récupérer le code depuis GitHub repository
+                git 'https://github.com/elanglet/projet-banque.git'
+            }
+        }
+        stage('Construction Maven') {
+            steps {
+                // On lance Maven en précisant le POM et le goal 'install'
+                bat 'mvn -f banque/pom.xml install'
+            }
+        }
+        // Etapes en parallèle
+        stage('Publication des tests + Message') {
+            parallel {
+                stage('Publication des tests') {
+                    steps {
+                        junit 'banque/*/target/surefire-reports/*.xml'
+                    }
+                }
+                stage('Message') {
+                    steps {
+                        echo "Illustration d'une étape parallèle..."
+                    }
+                }
+            }
+        }
+    }
+}
