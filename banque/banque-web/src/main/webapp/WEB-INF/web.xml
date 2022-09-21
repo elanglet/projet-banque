@@ -45,7 +45,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>banque</servlet-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>*.eni</url-pattern>
 	</servlet-mapping>
 
 </web-app>

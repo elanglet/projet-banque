@@ -26,7 +26,7 @@ public class IdentificationControllerIT {
 	@Test
 	public void testIdentificationController() throws IOException, SAXException {
 		WebConversation wc = new WebConversation();
-		WebResponse response = wc.getResponse(APP_URL + "/identification.do");
+		WebResponse response = wc.getResponse(APP_URL + "/identification.eni");
 		WebForm identificationForm = response.getForms()[0];
 		identificationForm.setParameter("identifiant", "1");
 		identificationForm.setParameter("motDePasse", "password");

@@ -14,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.ui.ModelMap;
 
+import fr.eni.mvnbook.banque.form.IdentificationForm;
 import fr.eni.mvnbook.banque.metier.BanqueService;
 import fr.eni.mvnbook.banque.persistance.entity.Client;
 import fr.eni.mvnbook.banque.persistance.entity.Compte;
@@ -60,16 +61,15 @@ public class IdentificationControllerTest extends TestController {
 	public void testSubmitForm() throws BanqueException {
 		
 		when(banqueService.authentifier(1L, "secret")).thenReturn(client);
-		when(banqueService.mesComptes(1L)).thenReturn(listeDesComptes);
 		
 		String result = identifcationController.submitForm(identificationForm, model);
 		
 		verify(banqueService).authentifier(1L, "secret");
-		verify(banqueService).mesComptes(1L);
+
 		verify(model).addAttribute("leClient", client);
-		verify(model).addAttribute("lesComptes", listeDesComptes);
+
 		
-		assertEquals("comptes", result);	
+		assertEquals("accueil-client", result);	
 	}
 
 }

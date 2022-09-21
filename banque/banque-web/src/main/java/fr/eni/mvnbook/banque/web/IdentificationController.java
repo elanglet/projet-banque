@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import fr.eni.mvnbook.banque.form.IdentificationForm;
 import fr.eni.mvnbook.banque.metier.BanqueService;
 import fr.eni.mvnbook.banque.persistance.entity.Client;
 import fr.eni.mvnbook.banque.persistance.entity.Compte;
@@ -24,7 +25,7 @@ public class IdentificationController {
 	@Inject
 	private BanqueService banqueService;
 	
-	@RequestMapping(value="/identification.do", method=RequestMethod.GET)
+	@RequestMapping(value="/identification.eni", method=RequestMethod.GET)
 	public String showForm() {
 		return "identification";
 	}
@@ -35,7 +36,7 @@ public class IdentificationController {
 		return form;
 	}
 	
-	@RequestMapping(value="/identification.do", method=RequestMethod.POST)
+	@RequestMapping(value="/identification.eni", method=RequestMethod.POST)
 	public String submitForm(
 		@ModelAttribute("identificationForm") IdentificationForm form,
 		ModelMap model
@@ -45,10 +46,8 @@ public class IdentificationController {
 				Long.parseLong(form.getIdentifiant()),
 				form.getMotDePasse()
 			);
-			List<Compte> listeComptes = banqueService.mesComptes(client.getId());
 			model.addAttribute("leClient", client);
-			model.addAttribute("lesComptes", listeComptes);
-			return "comptes";
+			return "accueil-client";
 		} 
 		catch(Exception e) {
 			e.printStackTrace();

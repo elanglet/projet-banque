@@ -15,8 +15,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 
 		<!-- Dependencies Versions -->
 		<spring.framework.version>5.1.6.RELEASE</spring.framework.version>
@@ -35,6 +35,8 @@
 		<javax.interceptor.version>1.2</javax.interceptor.version>
 		<javax.inject.version>1</javax.inject.version>
 		<httpunit.version>1.7.3</httpunit.version>
+        <javax.activation.version>1.2.0</javax.activation.version>
+        <jaxb.api.version>2.3.0</jaxb.api.version>
 
 
 		<!-- Plugins Versions -->
@@ -83,12 +85,12 @@
 		</url.dist.sites>
 	</properties>
 
-	<scm>
+<!-- 	<scm>
 		<connection>scm:git:http://gitlab.icjava.local/mvnbook/banque-parent.git</connection>
 		<developerConnection>scm:git:ssh://gitlab.icjava.local/mvnbook/banque-parent.git</developerConnection>
-	</scm>
+	</scm> -->
 
-	<distributionManagement>
+<!-- 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
 			<name>Référentiel Releases</name>
@@ -103,7 +105,7 @@
 			<id>mvnbook.elanglet.local</id>
 			<url>${url.dist.sites}</url>
 		</site>
-	</distributionManagement>
+	</distributionManagement> -->
 
 <!-- 	<repositories> -->
 <!-- 		<repository> -->
@@ -272,6 +274,28 @@
 				<groupId>javax.interceptor</groupId>
 				<artifactId>javax.interceptor-api</artifactId>
 				<version>${javax.interceptor.version}</version>
+			</dependency>
+
+			<!-- Dépendances JAXB pour Java 11 -->
+			<dependency>
+				<groupId>com.sun.activation</groupId>
+				<artifactId>javax.activation</artifactId>
+				<version>${javax.activation.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+				<version>${jaxb.api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-core</artifactId>
+				<version>${jaxb.api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-impl</artifactId>
+				<version>${jaxb.api.version}</version>
 			</dependency>
 		</dependencies>
 
