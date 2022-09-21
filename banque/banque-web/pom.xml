@@ -79,7 +79,26 @@
 
 	<build>
 		<finalName>banque-web</finalName>
-<!-- 		<plugins> -->
+ 		<plugins>
+ 			<plugin>
+ 				<groupId>org.apache.maven.plugins</groupId>  				
+ 				<artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <configuration>
+                            <target>
+                                <copy todir="../../docker/app">
+									<fileset dir="target" includes="banque-web.war" />
+								</copy>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+ 			</plugin>
 <!-- 			<plugin> -->
 <!-- 				<groupId>org.apache.maven.plugins</groupId> -->
 <!-- 				<artifactId>maven-failsafe-plugin</artifactId> -->
@@ -110,6 +129,6 @@
 <!-- 					</execution> -->
 <!-- 				</executions> -->
 <!-- 			</plugin> -->
-<!-- 		</plugins> -->
+ 		</plugins>
 	</build>
 </project> 

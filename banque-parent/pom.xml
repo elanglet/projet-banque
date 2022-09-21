@@ -67,6 +67,7 @@
 		<surefire.report.plugin.version>3.0.0-M3</surefire.report.plugin.version>
 		<cobertura.plugin.version>2.7</cobertura.plugin.version>
 		<jacoco.plugin.version>0.8.3</jacoco.plugin.version>
+		<antrun.plugin.version>3.0.0</antrun.plugin.version>
 
 		<!-- URL Serveurs -->
 		<!-- <url.dist.releases> -->
@@ -498,6 +499,11 @@
 					<artifactId>jacoco-maven-plugin</artifactId>
 					<version>${jacoco.plugin.version}</version>
 				</plugin>
+	            <plugin>
+    				<groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-antrun-plugin</artifactId>
+    	            <version>${antrun.plugin.version}</version>
+	           </plugin>
 			</plugins>
 		</pluginManagement>
 		<plugins>
