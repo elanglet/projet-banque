@@ -1,0 +1,42 @@
+
+version: '3.8'
+
+services:
+  tomcat:
+    image: tomcat-banque:1.0
+    container_name: tomcat-banque
+    build: 
+      context: .
+      dockerfile: Dockerfile.tomcat
+    networks:
+      - banque-network
+    ports:
+      - 8080:8080
+    depends_on:
+      - mariadb
+      
+  mariadb:
+    image: mariadb-banque:1.0
+    container_name: mariadb-banque
+    build: 
+      context: .
+      dockerfile: Dockerfile.mariadb
+    environment:
+      - MARIADB_RANDOM_ROOT_PASSWORD=yes
+    networks:
+      - banque-network
+    volumes:
+      - banque-mariadb:/var/lib/mysql
+      
+networks:
+  banque-network:
+    name: banque-network
+    ipam:
+      config:
+        - subnet: 172.36.0.0/16  
+          gateway: 172.36.0.1
+  
+volumes:
+  banque-mariadb:
+    name: banque-mariadb
+    driver: local				  
