@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="maven-antrun-" default="main">
-  <target name="main">
-    <copy todir="../../docker/app">
-      <fileset includes="banque-web.war" dir="target" />
-    </copy>
-  </target>
-</project>
