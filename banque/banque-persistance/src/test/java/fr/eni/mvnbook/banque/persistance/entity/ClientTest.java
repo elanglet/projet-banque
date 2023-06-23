@@ -91,12 +91,12 @@ public class ClientTest {
 	@Test
 	public void testSetId() {
 		client.setId(85);
-		assertEquals(85, client.getId())
+		assertEquals(85, client.getId());
 	}
 
 	@Test
 	public void testGetNom() {
-		assertEquals("DUPOND", client.getNom());
+		assertEquals("DUPONT", client.getNom());
 	}
 
 	@Test
