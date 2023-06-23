@@ -11,7 +11,7 @@ services:
     networks:
       - banque-network
     ports:
-      - 8080:8080
+      - 8888:8080
     depends_on:
       - mariadb
       
